@@ -405,6 +405,10 @@ async function generateInterviewReport({ resume, selfDescription, jobDescription
     3. Put all CSS inline using style="" attributes.
     4. Use only div, h1, h2, h3, p, ul, li, span.
     5. Make the resume ATS-friendly and professional.
+    6. The resume should be tailored for the given Job Description, it should match and highlight candidate's strength and relevent knowledge and skills.
+    7. Please make sure that does not look like AI generated , make is as close as human-like. Keep it ATS-friendly. The overall design should be simple and Professional.
+    
+               
 
         Resume:
         ${resume}
