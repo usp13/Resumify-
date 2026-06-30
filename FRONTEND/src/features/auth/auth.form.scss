@@ -1,0 +1,311 @@
+main.auth-main {
+  min-height: 100vh;
+  width: 100%;
+  //background: #0b0316;
+  background: #0d0d0d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+
+  .auth-container {
+    display: flex;
+    gap: 2rem;
+    max-width: 1200px;
+    width: 100%;
+    align-items: stretch;
+  }
+
+  .form-wrapper {
+    flex: 1;
+    min-width: 400px;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2b2b2b 100%);
+    //background: linear-gradient(135deg, #482f8f 0%, #5a3ba8 100%);
+    border-radius: 16px;
+    padding: 3rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+
+    .form-header {
+      margin-bottom: 2rem;
+
+      h1 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin: 0 0 0.5rem 0;
+        color: white;
+      }
+
+      p {
+        margin: 0;
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.75);
+      }
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .inputgrp {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+
+      label {
+        font-weight: 600;
+        font-size: 0.95rem;
+        color: white;
+      }
+
+      input {
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        outline: none;
+        padding: 0.9rem 1rem;
+        border-radius: 10px;
+        background: rgba(0, 0, 0, 0.2);
+        color: white;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        font-size: 0.95rem;
+        transition: all 0.2s ease;
+
+        &::placeholder {
+          color: rgba(255, 255, 255, 0.5);
+        }
+
+        &:focus {
+          border-color: rgba(255, 255, 255, 0.3);
+          background: rgba(0, 0, 0, 0.25);
+        }
+      }
+    }
+
+    .submit-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 1rem;
+      border: none;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #3a3a3a 0%, #111111 100%);
+      //background: linear-gradient(135deg, #2c292a 0%, #000000 100%);
+      color: white;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    //box-shadow: 0 6px 20px rgba(255, 255, 255, 0.15);
+      box-shadow: 0 4px 15px rgba(52, 52, 52, 0.3);
+
+      .arrow {
+        font-size: 1.1rem;
+        transition: transform 0.3s ease;
+      }
+
+      &:hover {
+        transform: translateY(-2px);
+        //box-shadow: 0 6px 20px rgba(255, 255, 255, 0.15);
+        box-shadow: 0 6px 20px rgba(255, 0, 115, 0.4);
+
+        .arrow {
+          transform: translateX(3px);
+        }
+      }
+
+      &:active {
+        transform: translateY(0);
+      }
+    }
+
+    .auth-footer {
+      text-align: center;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+      p {
+        margin: 0;
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.8);
+
+        a {
+          color: #ff0073;
+          text-decoration: none;
+          font-weight: 600;
+          transition: all 0.2s ease;
+
+          &:hover {
+            color: #ff3399;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  .form-sidebar {
+    flex: 1;
+    min-width: 350px;
+    
+    background: linear-gradient(135deg, #111111 0%, #242424 100%);
+   // background: linear-gradient(135deg, #5a3ba8 0%, #6d4fb8 100%);
+    border-radius: 16px;
+    padding: 3rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+
+    .sidebar-content {
+      h3 {
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin: 0 0 2rem 0;
+        color: white;
+        line-height: 1.3;
+      }
+
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        li {
+          font-size: 1rem;
+          color: rgba(255, 255, 255, 0.9);
+          line-height: 1.6;
+          font-weight: 500;
+
+          &:before {
+            content: '';
+          }
+        }
+      }
+    }
+  }
+}
+
+// RESPONSIVE DESIGN
+@media (max-width: 1024px) {
+  main.auth-main {
+    .auth-container {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .form-wrapper,
+    .form-sidebar {
+      min-width: unset;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  main.auth-main {
+    padding: 1rem;
+
+    .auth-container {
+      gap: 1rem;
+    }
+
+    .form-wrapper {
+      padding: 2rem 1.5rem;
+
+      .form-header {
+        margin-bottom: 1.5rem;
+
+        h1 {
+          font-size: 1.5rem;
+        }
+
+        p {
+          font-size: 0.85rem;
+        }
+      }
+
+      form {
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .inputgrp {
+        gap: 0.5rem;
+
+        label {
+          font-size: 0.9rem;
+        }
+
+        input {
+          padding: 0.8rem 0.9rem;
+          font-size: 0.9rem;
+        }
+      }
+
+      .submit-btn {
+        padding: 0.9rem;
+        font-size: 0.9rem;
+      }
+    }
+
+    .form-sidebar {
+      padding: 2rem 1.5rem;
+      min-height: 300px;
+
+      .sidebar-content {
+        h3 {
+          font-size: 1.3rem;
+          margin-bottom: 1.5rem;
+        }
+
+        ul {
+          gap: 1rem;
+
+          li {
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  main.auth-main {
+    padding: 1rem 0.5rem;
+
+    .form-wrapper {
+      padding: 1.5rem 1rem;
+
+      .form-header {
+        margin-bottom: 1rem;
+
+        h1 {
+          font-size: 1.25rem;
+        }
+
+        p {
+          font-size: 0.8rem;
+        }
+      }
+
+      .submit-btn {
+        padding: 0.8rem;
+        font-size: 0.85rem;
+      }
+    }
+
+    .form-sidebar {
+      display: none;
+    }
+  }
+}
